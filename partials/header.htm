@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author"      content="radiantweb.com">
+    
+    <title>Travu - Free bootstrap theme for October CMS</title>
+
+    <link rel="shortcut icon" href="{{ 'favicon.ico'|theme }}">
+    
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/font-awesome.min.css'|theme }}">
+
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap-theme.css'|theme }}" media="screen" >
+    <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    {% styles %}
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="home">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="{{ 'home'|page }}"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li {% if this.page.title|lower == 'home' %}class="active"{% endif %}><a href="{{ 'home'|page }}">Home</a></li>
+                    <li {% if this.page.title|lower == 'blog' %}class="active"{% endif %}><a href="{{ 'blog'|page }}">Blog</a></li>
+                    <!-- Sample Dropdown nav --
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sidebar-left.html">Left Sidebar</a></li>
+                            <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+
+                    -- end Sample Dropdown nav -->
+                    <li {% if this.page.title|lower == 'contact' %}class="active"{% endif %}><a href="{{ 'contact'|page }}">Contact</a></li>
+                    <li {% if this.page.title|lower == 'download' %}class="active"{% endif %}><a class="btn" href="{{ 'download'|page }}">DOWNLOAD NOW</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div> 
+    <!-- /.navbar -->

@@ -1,0 +1,64 @@
+description = "Blog Layout"
+
+==
+
+{% partial 'header' %}
+
+    <header id="head" class="secondary"></header>
+
+    <!-- container -->
+    <div class="container">
+
+        <ol class="breadcrumb">
+            {% if this.page.title != 'Home' %}
+            <li><a href="/">Home</a></li>
+            {% if this.page.title|lower != 'blog' %}
+            <li><a href="/blog">Blog</a></li>
+            {% endif %}
+            <li class="active">{{this.page.title|capitalize}}</li>
+            {% endif %}
+        </ol>
+
+        <div class="row">
+            
+            <!-- Article main content -->
+            <article class="col-sm-8 maincontent">
+                {% page %}
+            </article>
+            <!-- /Article -->
+            
+            <!-- Sidebar -->
+            <aside class="col-sm-4 sidebar sidebar-right">
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" id="keyword" value="{{ search_slug }}">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default search_now" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                    <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('.search_now').click(function(){
+                            var term = $('#keyword').val();
+                            term = term.replace(' ','-');
+                            window.location =  "{{ 'home'|page }}/blog/search/" + term + '/';
+                        });
+                    });
+                    </script>
+                    <!-- /input-group -->
+                </div>
+
+                <div class="well">
+                    {% partial "sidebar" %}
+                </div>
+            </aside>
+            <!-- /Sidebar -->
+
+        </div>
+    </div>  <!-- /container -->
+    
+    <section class="container-full top-space"></section>
+{% partial 'footer' %}

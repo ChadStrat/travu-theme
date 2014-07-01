@@ -1,0 +1,24 @@
+title = "Blog Post"
+url = "/blog/post/:post_slug/"
+layout = "blog"
+
+[proBlogPost]
+post_id = ":post_slug"
+
+[proBlogCategories]
+categoryPage = "blog"
+
+[proBlogTags]
+TagPage = "blog"
+
+[proBlogArchive]
+
+
+[disqus]
+
+
+[tweetdownload]
+==
+{% component 'proBlogPost' %}
+
+        {% component 'disqus' %}

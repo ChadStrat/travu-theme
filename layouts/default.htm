@@ -1,0 +1,29 @@
+description = "Default Layout"
+==
+{% partial 'header' %}
+
+    <header id="head" class="secondary"></header>
+
+    <!-- container -->
+    <div class="container">
+
+        <ol class="breadcrumb">
+            {% if this.page.title != 'Home' %}
+            <li><a href="/">Home</a></li>
+            <li class="active">{{this.page.title|capitalize}}</li>
+            {% endif %}
+        </ol>
+
+        <div class="row">
+            
+            <!-- Article main content -->
+            <article class="col-sm-12 maincontent">
+                {% page %}
+            </article>
+            <!-- /Article -->
+
+        </div>
+    </div>  <!-- /container -->
+    
+    <section class="container-full top-space"></section>
+{% partial 'footer' %}

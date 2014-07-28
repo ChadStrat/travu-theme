@@ -69,7 +69,8 @@ img.pull-left { margin-right: 10px; }
 #social .wrapper { width:340px; margin:0 auto; }
 
 /* Main content block */
-.maincontent { }
+.maincontent {margin: 22px 0;}
+.maincontent .blog-post-list{list-style: none; margin-left: -40px;}
 
 /* Sidebars */
 .sidebar { padding-top:36px; padding-bottom:30px; }

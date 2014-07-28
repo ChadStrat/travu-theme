@@ -39,8 +39,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li {% if this.page.title|lower == 'home' %}class="active"{% endif %}><a href="{{ 'home'|page }}">Home</a></li>
-                    <li {% if this.page.title|lower == 'blog' %}class="active"{% endif %}><a href="{{ 'blog'|page }}">Blog</a></li>
+                    {% partial 'nav' %}
                     <!-- Sample Dropdown nav --
 
                     <li class="dropdown">
@@ -52,7 +51,7 @@
                     </li>
 
                     -- end Sample Dropdown nav -->
-                    <li {% if this.page.title|lower == 'contact' %}class="active"{% endif %}><a href="{{ 'contact'|page }}">Contact</a></li>
+                    <li {% if this.page.title|lower == 'contact' %}class="active"{% endif %}><a href="{{ 'samples/contact'|page }}">Contact</a></li>
                     <li {% if this.page.title|lower == 'download' %}class="active"{% endif %}><a class="btn" href="{{ 'download'|page }}">DOWNLOAD NOW</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
